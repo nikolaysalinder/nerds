@@ -159,13 +159,13 @@
   <div class="container">
     <div class="footer-socials">
       <ul>
-        <li><a href="#">vkontakte.ru</a></li>
-        <li><a href="#">facebook.com</a></li>
-        <li><a href="#">instagramm.com</a></li>
+        <li><a class="vk" href="#">vkontakte.ru</a></li>
+        <li><a class="fb" href="#">facebook.com</a></li>
+        <li><a class="in" href="#">instagramm.com</a></li>
       </ul>
     </div>
     <div class="footer-title">
-      <em class="profit">Давайте дружить, это выгодно!</em>
+      <b class="profit">Давайте дружить, это выгодно!</b>
       <p>Скидка 10% для друзей из социальных сетей.</p>
     </div>
   </div>
@@ -185,11 +185,11 @@ export default {
 
 <style>
 /*стили для разработки*/
-a, div, li, nav, ul, header,
+/*a, div, li, nav, ul, header,
 footer, .container, figure, form,
 label, h1, h2 {
   outline: 1px solid green;
-}
+}*/
 /*стили для разработки*/
 body{
   min-width: 900px;
@@ -210,6 +210,7 @@ body{
 }
 .main-header{
   display: flex;
+  background: #eeeeee;
 }
 .top-logo {
   display: block;
@@ -244,6 +245,7 @@ body{
 }
 .slider {
   height: 350px;
+  background: #eee;
 }
 .slider-column-left{
   width: 380px;
@@ -469,12 +471,23 @@ body{
 .footer-socials li {
   width: 60px;
   height: 60px;
-  background: green;
   border-radius: 50%;
+  background: #eee;
 }
 .footer-socials a {
   font-size: 0;
-  width: 100%;
-  height: 100%;
+  width: 60px;
+  height: 60px;
+}
+.footer-social .vk {
+  background: url('./../assets/img/vk-icon.png');
+}
+.footer-title {
+  padding-left: 76px;
+}
+.footer-title .profit {
+  margin-top: 75px;
+  display: block;
+  font-size: 36px;
 }
 </style>
