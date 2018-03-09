@@ -31,7 +31,7 @@
           <img
           width="500"
           class="slider-img"
-          src="./../assets/img/slide1.png"
+          :src="srcSlider"
           alt="#">
         </div>
       </div>
@@ -39,7 +39,8 @@
     <div class="service">
       <div class="container">
         <div class="service-item">
-          <img src="./../assets/img/illustration-1-jpg.jpg"
+          <img
+          :src="srcImg1"
           width="240"
           height="123"
           alt="">
@@ -50,7 +51,8 @@
           <a href="#" class="service-item-order red">Заказать</a>
         </div>
         <div class="service-item">
-          <img src="./../assets/img/illustration-2-jpg.jpg"
+          <img
+          :src="srcImg2"
           width="240"
           height="123"
           alt="">
@@ -60,7 +62,8 @@
           <a href="#" class="service-item-order green">Заказать</a>
         </div>
         <div class="service-item">
-          <img src="./../assets/img/illustration-3-jpg.jpg"
+          <img
+          :src="srcImg3"
           width="240"
           height="123"
           alt="">
@@ -88,7 +91,7 @@
         </div>
         <div class="features-column-right">
           <img
-          src="./../assets/img/nerds-illustration-jpg.jpg"
+          :src="srcImg"
           width="330"
           alt="#" class="features-img">
           <h3>С 2004 года любим точность во всем:</h3>
@@ -178,6 +181,11 @@ export default {
   name: 'Home',
   data() {
     return {
+      srcSlider: './static/img/slide1.png',
+      srcImg1: './static/img/illustration-1-jpg.png',
+      srcImg2: './static/img/illustration-2-jpg.jpg',
+      srcImg3: './static/img/illustration-3-jpg.jpg',
+      srcImg: './static/img/nerds-illustration-jpg.jpg',
     };
   },
 };
