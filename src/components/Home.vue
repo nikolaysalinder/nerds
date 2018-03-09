@@ -39,11 +39,13 @@
     <div class="service">
       <div class="container">
         <div class="service-item">
-          <img
-          :src="srcImg1"
-          width="240"
-          height="123"
-          alt="">
+          <div class="service-img-wrapper">
+             <img
+            :src="srcImg1"
+            width="240"
+            height="123"
+            alt="">
+          </div>
           <h2 class="service-item-title">Веб-сайты</h2>
           <p class="service-item-description">
             Мир никогда не будет прежним после того как увидит ваш сайт!
@@ -51,22 +53,26 @@
           <a href="#" class="service-item-order red">Заказать</a>
         </div>
         <div class="service-item">
-          <img
-          :src="srcImg2"
-          width="240"
-          height="123"
-          alt="">
+          <div class="service-img-wrapper">
+            <img
+            :src="srcImg2"
+            width="240"
+            height="123"
+            alt="">
+          </div>
           <h2 class="service-item-title">Приложения</h2>
           <p class="service-item-description">
           Покорите топ-10 приложений в AppStore и Google Play</p>
           <a href="#" class="service-item-order green">Заказать</a>
         </div>
         <div class="service-item">
-          <img
-          :src="srcImg3"
-          width="240"
-          height="123"
-          alt="">
+          <div class="service-img-wrapper">
+            <img
+            :src="srcImg3"
+            width="240"
+            height="123"
+            alt="">
+          </div>
           <h2 class="service-item-title">Презентации</h2>
           <p class="service-item-description">Вы даже не подозреваете, насколько вы изумительны!</p>
           <a href="#" class="service-item-order yellow">Заказать</a>
@@ -91,7 +97,7 @@
         </div>
         <div class="features-column-right">
           <img
-          :src="srcImg"
+          :src="srcImg4"
           width="330"
           alt="#" class="features-img">
           <h3>С 2004 года любим точность во всем:</h3>
@@ -124,24 +130,25 @@
     <div class="clients">
       <div class="container">
         <div class="clients-item">
-          <img src="./../assets/img/logo-1-png.png" alt="#">
+          <img :src="srcImg5" alt="#">
         </div>
         <div class="clients-item">
-          <img src="./../assets/img/logo-2-png.png" alt="#">
+          <img :src="srcImg6" alt="#">
         </div>
         <div class="clients-item">
-          <img src="./../assets/img/logo-3-png.png" alt="#">
+          <img :src="srcImg7" alt="#">
         </div>
         <div class="clients-item">
-          <img src="./../assets/img/logo-4-png.png" alt="#">
+          <img :src="srcImg8" alt="#">
         </div>
       </div>
     </div>
     <div id="map">
+      <img :src="srcImg10" id="map-img">
       <div class="container">
         <div class="contacts">
           <img
-          src="./../assets/img/n-rds-design-studio.png" alt="Nerds Design Studio">
+          :src="srcImg9" alt="Nerds Design Studio">
           <p class="adress">
             191186, Санкт-Петербург,<br>
             ул. Б. Конюшенная, д. 19/8
@@ -182,10 +189,16 @@ export default {
   data() {
     return {
       srcSlider: './static/img/slide1.png',
-      srcImg1: './static/img/illustration-1-jpg.png',
+      srcImg1: './static/img/illustration-1-jpg.jpg',
       srcImg2: './static/img/illustration-2-jpg.jpg',
       srcImg3: './static/img/illustration-3-jpg.jpg',
-      srcImg: './static/img/nerds-illustration-jpg.jpg',
+      srcImg4: './static/img/nerds-illustration-jpg.jpg',
+      srcImg5: './static/img/logo-1-png.png',
+      srcImg6: './static/img/logo-2-png.png',
+      srcImg7: './static/img/logo-3-png.png',
+      srcImg8: './static/img/logo-4-png.png',
+      srcImg9: './static/img/n-rds-design-studio.png',
+      srcImg10: './static/img/map.jpg',
     };
   },
 };
@@ -193,11 +206,11 @@ export default {
 
 <style>
 /*стили для разработки*/
-/*a, div, li, nav, ul, header,
+a, div, li, nav, ul, header,
 footer, .container, figure, form,
 label, h1, h2 {
   outline: 1px solid green;
-}*/
+}
 /*стили для разработки*/
 body{
   min-width: 900px;
@@ -280,9 +293,13 @@ body{
   padding-right: 70px;
   padding-bottom: 7px;
   color: #fff;
-  background: red;
+  background: #fb565a;
   width: 100px;
   border-radius: 4px;
+  transition: background .5s;
+}
+.slider-column-left a:hover {
+  background: #d6494d;
 }
 .slider-column-right {
   width: 500px;
@@ -297,9 +314,11 @@ body{
 .service-item {
   padding: 0;
   width: 240px;
-}
-.service-item img {
   margin-top: 50px;
+}
+.service-img-wrapper {
+  width: 143px;
+  height: 123px;
 }
 .service-item-title {
   text-transform: uppercase;
@@ -327,12 +346,24 @@ body{
 }
 .red {
   background: #fb565a;
+  transition: background .5s;
+}
+.red:hover {
+  background: #d6494d;
 }
 .green {
   background: #00ca74;
+  transition: background .5s;
+}
+.green:hover {
+  background: #01a25e;
 }
 .yellow {
   background: #efc84a;
+  transition: background .5s;
+}
+.yellow:hover {
+  background: #d6ae2c;
 }
 .features .container {
   flex-wrap: wrap;
@@ -413,12 +444,18 @@ body{
 #map{
   height: 415px;
   margin-top: 50px;
-  background: url('./../assets/img/map.jpg');
   position: relative;
   background-repeat: no-repeat;
 }
 #map .container {
   height: 415px;
+}
+#map #map-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 #map .contacts {
   display: block;
@@ -452,8 +489,12 @@ body{
   padding-right: 26px;
   text-transform: uppercase;
   border-radius: 4px;
-  background: red;
+  background: #fb565a;
   color: #fff;
+  transition: background .5s;
+}
+.contacts .feedback:hover {
+  background: #d6494d;
 }
 .baloon {
   display: block;
@@ -464,6 +505,7 @@ body{
   width: 160px;
   height: 200px;
   background: url('./../assets/img/map-marker-png.png');
+  background-repeat: no-repeat;
 }
 .footer-socials {
   width: 240px;
@@ -476,19 +518,51 @@ body{
   list-style: none;
   justify-content: space-between;
 }
-.footer-socials li {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  background: #eee;
-}
 .footer-socials a {
+  display: block;
   font-size: 0;
   width: 60px;
   height: 60px;
+  border-radius: 50%;
 }
-.footer-social .vk {
-  background: url('./../assets/img/vk-icon.png');
+.footer-socials a:hover {
+  background: #eb4a59;
+}
+.footer-socials .vk {
+  background: #ccc url('./../assets/img/vk-icon.png');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-position: 50%;
+}
+.footer-socials .vk:hover {
+  background: #eb4a59 url('./../assets/img/vk-icon.png');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-position: 50%;
+}
+.footer-socials .fb {
+  background: #ccc url('./../assets/img/fb-icon.png');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-position: 50%;
+}
+.footer-socials .fb:hover {
+  background: #eb4a59 url('./../assets/img/fb-icon.png');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-position: 50%;
+}
+.footer-socials .in {
+  background: #ccc url('./../assets/img/insta-icon.png');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-position: 50%;
+}
+.footer-socials .in:hover {
+  background: #eb4a59 url('./../assets/img/insta-icon.png');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-position: 50%;
 }
 .footer-title {
   padding-left: 76px;
